@@ -487,15 +487,7 @@ function initializeFormHandling() {
     });
 }
 
-function handleSignUp(e) {
-    e.preventDefault();
-    showNotification('Sign Up feature coming soon!', 'info');
-}
 
-function handleLogin(e) {
-    e.preventDefault();
-    showNotification('Login feature coming soon!', 'info');
-}
 
 function handleEventJoin(e) {
     e.preventDefault();
