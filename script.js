@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.hero-content')?.classList.add('fade-in-up');
     document.querySelector('.hero-text')?.classList.add('fade-in-up');
     document.querySelector('.hero-image')?.classList.add('fade-in-up');
+    initializeProductImageSlider();
 });
 
 // Initialize Application
@@ -20,6 +21,7 @@ function initializeApp() {
     initializeProductShowcase();
     initializeFormHandling();
     initializeResponsiveHandlers();
+    initializeEventSlider();
 }
 
 // Navigation Functionality
@@ -487,8 +489,6 @@ function initializeFormHandling() {
     });
 }
 
-
-
 function handleEventJoin(e) {
     e.preventDefault();
     const eventTitle = e.target.closest('.event-card').querySelector('.event-title').textContent;
@@ -825,4 +825,206 @@ function adjustGridLayouts(isMobile, isTablet, isDesktop) {
             grid.classList.add('desktop-layout');
         }
     });
+}
+
+// Event Slider Functionality
+function initializeEventSlider() {
+    const sliderContainer = document.getElementById('sliderContainer');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (!sliderContainer || !prevBtn || !nextBtn) return;
+    
+    const cards = Array.from(sliderContainer.querySelectorAll('.card'));
+    if (cards.length === 0) return;
+    
+    // Check if mobile view
+    const isMobile = window.innerWidth <= 767;
+    
+    // Desktop positions (horizontal) - 3-1-3 layout
+    const desktopPositions = [
+        { left: -200, z: 1, scale: 0.85, opacity: 1 },
+        { left: -100, z: 2, scale: 0.85, opacity: 1 },
+        { left: 0, z: 3, scale: 0.85, opacity: 1 },
+        { left: 310, z: 5, scale: 1, opacity: 1 },
+        { left: 620, z: 3, scale: 0.85, opacity: 1 },
+        { left: 720, z: 2, scale: 0.85, opacity: 1 },
+        { left: 820, z: 1, scale: 0.85, opacity: 1 },
+    ];
+    
+    // Mobile positions (vertical) - showing parts of each card
+    const mobilePositions = [
+        { top: -80, z: 2, scale: 0.9, opacity: 1 },
+        { top: -40, z: 3, scale: 0.9, opacity: 1 },
+        { top: 0, z: 5, scale: 1, opacity: 1 },
+        { top: 40, z: 3, scale: 0.9, opacity: 1 },
+        { top: 80, z: 2, scale: 0.9, opacity: 1 },
+        { top: 120, z: 1, scale: 0.9, opacity: 1 },
+        { top: 160, z: 1, scale: 0.9, opacity: 1 },
+    ];
+    
+    let offset = 0;
+    
+    function updateCards() {
+        const positions = isMobile ? mobilePositions : desktopPositions;
+        
+        for (let i = 0; i < cards.length; i++) {
+            const pos = positions[i];
+            if (!pos) continue;
+            
+            const card = cards[(i + offset) % cards.length];
+            
+            if (isMobile) {
+                // Mobile: vertical positioning
+                card.style.top = pos.top + "px";
+                card.style.left = "5%";
+                card.style.zIndex = pos.z;
+                card.style.opacity = pos.opacity;
+                card.style.transform = `scale(${pos.scale})`;
+            } else {
+                // Desktop: horizontal positioning
+                card.style.left = pos.left + "px";
+                card.style.top = "0";
+                card.style.zIndex = pos.z;
+                card.style.opacity = pos.opacity;
+                card.style.transform = `scale(${pos.scale})`;
+            }
+            
+            // Remove all position data attributes
+            card.removeAttribute('data-position');
+        }
+        
+        // Add position data attributes for edge cards (desktop only)
+        if (!isMobile && cards.length > 0) {
+            const leftmostCard = cards[offset % cards.length];
+            const rightmostCard = cards[(offset + 6) % cards.length];
+            
+            leftmostCard.setAttribute('data-position', 'left');
+            rightmostCard.setAttribute('data-position', 'right');
+        }
+    }
+    
+    // Initialize slider
+    updateCards();
+    
+    // Event listeners for navigation buttons
+    prevBtn.addEventListener('click', function() {
+        offset = (offset - 1 + cards.length) % cards.length;
+        updateCards();
+    });
+    
+    nextBtn.addEventListener('click', function() {
+        offset = (offset + 1) % cards.length;
+        updateCards();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            prevBtn.click();
+        } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            nextBtn.click();
+        }
+    });
+    
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let startY = 0;
+    let endX = 0;
+    let endY = 0;
+    
+    sliderContainer.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+    });
+    
+    sliderContainer.addEventListener('touchend', function(e) {
+        endX = e.changedTouches[0].clientX;
+        endY = e.changedTouches[0].clientY;
+        
+        const diffX = startX - endX;
+        const diffY = startY - endY;
+        
+        if (Math.abs(diffX) > 50 || Math.abs(diffY) > 50) { // Minimum swipe distance
+            if (isMobile) {
+                // Mobile: vertical swipes
+                if (diffY > 0) {
+                    nextBtn.click(); // Swipe up
+                } else {
+                    prevBtn.click(); // Swipe down
+                }
+            } else {
+                // Desktop: horizontal swipes
+                if (diffX > 0) {
+                    nextBtn.click(); // Swipe left
+                } else {
+                    prevBtn.click(); // Swipe right
+                }
+            }
+        }
+    });
+    
+    // Auto-play functionality (optional)
+    let autoPlayInterval;
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(function() {
+            nextBtn.click();
+        }, 5000); // Change slide every 5 seconds
+    }
+    
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+        }
+    }
+    
+    // Start auto-play and stop on user interaction
+    startAutoPlay();
+    
+    sliderContainer.addEventListener('mouseenter', stopAutoPlay);
+    sliderContainer.addEventListener('mouseleave', startAutoPlay);
+    
+    prevBtn.addEventListener('click', stopAutoPlay);
+    nextBtn.addEventListener('click', stopAutoPlay);
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        const newIsMobile = window.innerWidth <= 767;
+        if (newIsMobile !== isMobile) {
+            // Reinitialize if switching between mobile and desktop
+            setTimeout(updateCards, 100);
+        }
+    });
+}
+
+function initializeProductImageSlider() {
+    const container = document.querySelector('.product-image-container');
+    if (!container) return;
+
+    const images = container.querySelectorAll('.product-image img');
+    const leftBtn = container.querySelector('.product-img-arrow-left');
+    const rightBtn = container.querySelector('.product-img-arrow-right');
+    let current = 0;
+
+    function showImage(idx) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === idx);
+        });
+    }
+
+    leftBtn.addEventListener('click', function() {
+        current = (current - 1 + images.length) % images.length;
+        showImage(current);
+    });
+
+    rightBtn.addEventListener('click', function() {
+        current = (current + 1) % images.length;
+        showImage(current);
+    });
+
+    // Show the first image initially
+    showImage(current);
 }
