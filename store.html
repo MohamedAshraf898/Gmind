@@ -3,27 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | GMIND</title>
+    <title>Store | GMIND</title>
     <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="store.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
       rel="stylesheet"
     />
-    <script>
-      // Scroll header functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const header = document.querySelector("header");
-
-        // Header scroll effect
-        window.addEventListener("scroll", function () {
-          if (window.scrollY > 100) {
-            header.classList.add("scrolled");
-          } else {
-            header.classList.remove("scrolled");
-          }
-        });
-      });
-    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Header / Navigation -->
@@ -34,10 +24,10 @@
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html" class="active">About Us</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
             <li><a href="events.html">Events</a></li>
             <li><a href="#">Games</a></li>
-            <li><a href="store.html">Store</a></li>
+            <li><a href="store.html" class="active">Store</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
         </nav>
@@ -62,10 +52,10 @@
       <button class="mobile-menu-close" id="mobile-menu-close">&times;</button>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html" class="active">About Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="#">Games</a></li>
-        <li><a href="store.html">Store</a></li>
+        <li><a href="store.html" class="active">Store</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
       <div class="auth-links">
@@ -73,290 +63,246 @@
         <a href="signup.html" class="btn btn-primary">Sign Up</a>
       </div>
     </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1 class="hero-title">
-            <span class="hero-title-main">LEARN THROUGH GAMES</span><br />
-            <span class="hero-title-secondary"
-              >We turn learning into an adventure with expertly crafted
-              educational games loved by kids, trusted by parents, and supported
-              by teachers</span
-            >
+    <section class="hero store-hero">
+      <div class="hero__container">
+        <div class="hero__left">
+          <div class="hero__subtitle">Our Store</div>
+          <h1 class="hero__headline">
+            DISCOVER FUN &<br />EDUCATIONAL GAMES FOR KIDS!
           </h1>
-          <a
-            href="#games"
-            class="btn btn-primary"
-            style="background-color: #443d96"
-            style="border-radius: 10px !important"
-            >Explore Games</a
+          <div class="hero__desc">
+            Lorem ipsum dolor sit amet consectetur. Vel tristique. Lorem ipsum
+            dolor sit amet consectetur. Vel tristique. Lorem
+          </div>
+          <a href="#" class="btn btn--shop" style="text-decoration: none"
+            >Shop Now</a
           >
         </div>
-        <div class="hero-visuals">
+        <div class="hero__right">
+          <div class="hero__radial"></div>
+          <img src="Images/porduct.png" alt="VR Headset" class="hero__vr-img" />
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <h2 class="products__title">CHOOSE YOUR PRODUCT</h2>
+      <div class="products__filters">
+        <button class="filter active">All</button>
+        <button class="filter">Cards</button>
+        <button class="filter">Games</button>
+        <button class="filter">VR Headset</button>
+      </div>
+      <div class="products__grid">
+        <!-- Product Card 1 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">4.0/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">212 EG</span>
+              <span class="product-card__oldprice">242 EG</span>
+              <span class="product-card__discount">-20%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 2 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">3.5/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">145 EG</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 3 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">4.5/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">180 EG</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 4 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">5.0/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">150 EG</span>
+              <span class="product-card__oldprice">200 EG</span>
+              <span class="product-card__discount">-30%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 5 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">3.5/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">145 EG</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 6 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">4.5/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">180 EG</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 7 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">5.0/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">150 EG</span>
+              <span class="product-card__oldprice">200 EG</span>
+              <span class="product-card__discount">-30%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Card 8 -->
+        <div class="product-card-group">
+          <div class="product-card">
+            <div class="product-card__img">
+              <img src="Images/store-product.jpg" alt="Product" />
+            </div>
+          </div>
+          <div class="product-card__content">
+            <div class="product-card__name">Product Name</div>
+            <div class="product-card__rating">
+              ★★★★★ <span class="product-card__rating-number">4.0/5</span>
+            </div>
+            <div class="product-card__prices">
+              <span class="product-card__price">242 EG</span>
+              <span class="product-card__oldprice">280 EG</span>
+              <span class="product-card__discount">-20%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="features">
+      <div class="feature">
+        <div class="feature__icon feature__icon--delivery">
           <img
-            src="Images/about-us-hero.png"
-            alt="Hero Character"
-            class="about-us-hero-img"
+            src="Images/icon-delivery.png"
+            alt="Delivery"
+            class="feature__icon-img"
           />
-          <div class="hero-reflection"></div>
+        </div>
+        <div class="feature__text">
+          <div class="feature__title">FREE AND FAST DELIVERY</div>
+          <div class="feature__desc">
+            Free delivery for all orders over $140
+          </div>
         </div>
       </div>
-    </section>
-
-    <!-- Impact Section (new, before features) -->
-    <section class="impact-section">
-      <div class="impact-container">
-        <div class="impact-left">
-          <div class="impact-title-group">
-            <span class="impact-accent"></span>
-            <div>
-              <h2 class="impact-title">
-                We Are GMind , and We're Here<br />To Revolutionize Education<br /><span
-                  class="impact-highlight"
-                  >Through 3D games</span
-                >
-              </h2>
-            </div>
-          </div>
+      <div class="feature">
+        <div class="feature__icon feature__icon--service">
           <img
-            src="Images/boy-about-us.jpg"
-            alt="VR Experience"
-            class="impact-img"
+            src="Images/Icon-Customer service.png"
+            alt="Customer Service"
+            class="feature__icon-img"
           />
         </div>
-        <div class="impact-right">
-          <div class="impact-cards-row">
-            <div class="impact-card">
-              <img
-                src="Images/kid.jpg"
-                alt="Impact Card 1"
-                class="impact-card-img"
-              />
-            </div>
-            <div class="impact-card">
-              <img
-                src="Images/impact.jpg"
-                alt="Impact Card 2"
-                class="impact-card-img"
-              />
-            </div>
-          </div>
-          <p class="impact-desc">
-            Lorem ipsum dolor sit amet consectetur. Vel tristique <br />
-            tellus dui non facilisis lorem nulla diam. Diam aliquam
-          </p>
-          <div class="impact-stats-row">
-            <div class="impact-stat">
-              <span class="impact-stat-number">100+</span><br />Schools
-            </div>
-            <div class="impact-stat">
-              <span class="impact-stat-number">5k+</span><br />Students
-            </div>
-            <div class="impact-stat">
-              <span class="impact-stat-number">1k+</span><br />Parteners
-            </div>
-            <div class="impact-stat">
-              <span class="impact-stat-number">200+</span><br />Events
-            </div>
-          </div>
+        <div class="feature__text">
+          <div class="feature__title">24/7 CUSTOMER SERVICE</div>
+          <div class="feature__desc">Friendly 24/7 customer support</div>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature__icon feature__icon--moneyback">
+          <img
+            src="Images/Icon-secure.png"
+            alt="Money Back"
+            class="feature__icon-img"
+          />
+        </div>
+        <div class="feature__text">
+          <div class="feature__title">MONEY BACK GUARANTEE</div>
+          <div class="feature__desc">We return money within 30 days</div>
         </div>
       </div>
     </section>
-
-    <!-- Features Section -->
-    <section class="features container">
-      <div class="feature">
-        <div class="feature-icon" style="background: #7ed957">01</div>
-        <h3>Workshops & Events</h3>
-        <p>
-          Interactive educational workshops and events and gamified learning
-          sessions, designed to spark curiosity and engagement.
-        </p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon" style="background: #e50b4e">02</div>
-        <h3>Games & Apps</h3>
-        <p>
-          Tailored AR/VR educational games aligned with curricula to enhance
-          classroom experiences for teachers and students.
-        </p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon" style="background: #f7b602">03</div>
-        <h3>Games At Home</h3>
-        <p>
-          Engaging and educational games that allow parents to support their
-          children's learning journey at home.
-        </p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon" style="background: #02c4b2">04</div>
-        <h3>Customized Games</h3>
-        <p>
-          Bespoke game development services for educational institutions,
-          combining creativity and innovation to meet specific learning goals.
-        </p>
-      </div>
-    </section>
-
-    <!-- Trusted By Section -->
-    <section class="trusted-by">
-      <div class="container">
-        <h2>We are trusted by</h2>
-        <div class="trusted-logos">
-          <img src="Images/g1.jpg" alt="Partner 1" />
-          <img src="Images/hero.png" alt="Partner 2" />
-          <img src="Images/GMIND.png" alt="Partner 3" />
-          <img src="Images/vr.png" alt="Partner 4" />
+    <!-- Promo section with product details and image -->
+    <!-- <section class="promo">
+      <div class="promo__content">
+        <h3>Lorem ipsum dolor sit amet, consectetur elit</h3>
+        <p>Lorem ipsum dolor sit amet consectetur. Vel tristique</p>
+        <div class="promo__rating">
+          <span>4.6/5</span>
+          <span>135 Reviews</span>
+        </div>
+        <a href="#" class="btn btn--secondary">Add To Cart</a>
+        <div class="promo__prices">
+          <span class="promo__price">$102.00</span>
+          <span class="promo__unit">/ gram</span>
+          <span class="promo__oldprice">$200.00</span>
         </div>
       </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team">
-      <div class="container">
-        <h2>Our Team</h2>
-        <p>
-          Our dedicated team combines creativity, education, and technology
-          <br />
-          to bring your children impactful learning through games.
-        </p>
-        <div class="team-members">
-          <div class="member">
-            <img src="Images/Character.png" alt="Team Member" />
-            <div class="job-title">CEO</div>
-            <h4>Jane Doe</h4>
-          </div>
-          <div class="member">
-            <img src="Images/hero.png" alt="Team Member" />
-            <div class="job-title">Lead Developer</div>
-            <h4>John Smith</h4>
-          </div>
-          <div class="member">
-            <img src="Images/g1.jpg" alt="Team Member" />
-            <div class="job-title">Designer</div>
-            <h4>Mary Lee</h4>
-          </div>
-          <div class="member">
-            <img src="Images/vr.png" alt="Team Member" />
-            <div class="job-title">Education Expert</div>
-            <h4>Alex Kim</h4>
-          </div>
-          <div class="member">
-            <img src="Images/GMIND.png" alt="Team Member" />
-            <div class="job-title">Marketing</div>
-            <h4>Sam Patel</h4>
-          </div>
-        </div>
+      <div class="promo__image">
+        <img src="Images/store-product.jpg" alt="Promo VR" />
       </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-      <div class="container">
-        <h2 class="testimonials-title">
-          WHAT OUR CUSTOMER <span class="testimonials-title-green">SAY'S</span>
-        </h2>
-        <p class="testimonials-subtitle">
-          Empowering success through exceptional user experiences
-        </p>
-        <div class="testimonial-grid">
-          <div class="testimonial">
-            <img src="Images/g1.jpg" alt="Avatar" class="testimonial-avatar" />
-            <div class="testimonial-content">
-              <div class="testimonial-name">
-                Zack Swire <span class="testimonial-handle">@swire</span>
-              </div>
-              <p>
-                If you're a Coach or a Creator, and you'd like to create better
-                videos quickly, check out GMIND! Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Fugiat voluptatum doloribus quas
-                ipsam, sit velit, ab quidem numquam dolores iste incidunt
-                molestias voluptate voluptas. Ratione ipsa perferendis fugiat
-                blanditiis et.
-              </p>
-            </div>
-          </div>
-          <div class="testimonial">
-            <img
-              src="Images/hero.png"
-              alt="Avatar"
-              class="testimonial-avatar"
-            />
-            <div class="testimonial-content">
-              <div class="testimonial-name">
-                Victor <span class="testimonial-handle">@victoruxui</span>
-              </div>
-              <p>
-                GMIND is the best! Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Cum ratione quasi exercitationem, tenetur
-                officia eligendi numquam quis nam optio, doloremque cumque sunt
-                soluta cupiditate corrupti vel eius beatae esse dolor.
-              </p>
-            </div>
-          </div>
-          <div class="testimonial">
-            <img src="Images/vr.png" alt="Avatar" class="testimonial-avatar" />
-            <div class="testimonial-content">
-              <div class="testimonial-name">
-                Luca Restagno <span class="testimonial-handle">@ikoichi</span>
-              </div>
-              <p>
-                I'm really impressed by the video composition and the final
-                result. Brilliant!
-              </p>
-            </div>
-          </div>
-
-          <div class="testimonial">
-            <img
-              src="Images/GMIND.png"
-              alt="Avatar"
-              class="testimonial-avatar"
-            />
-            <div class="testimonial-content">
-              <div class="testimonial-name">
-                Jordan Godbey
-                <span class="testimonial-handle">@jordangodbey</span>
-              </div>
-              <p>
-                Loving how easy it is to record my course on GMIND. Makes it
-                look super cool too!
-              </p>
-            </div>
-          </div>
-          <div class="testimonial">
-            <img src="Images/g1.jpg" alt="Avatar" class="testimonial-avatar" />
-            <div class="testimonial-content">
-              <div class="testimonial-name">
-                Justin Moore
-                <span class="testimonial-handle">@justinmoorefam</span>
-              </div>
-              <p>
-                I recorded my entire Gifted to Paid course using GMIND. Very
-                bullish on Grant and the team.
-              </p>
-            </div>
-          </div>
-          <div class="testimonial">
-            <img
-              src="Images/hero.png"
-              alt="Avatar"
-              class="testimonial-avatar"
-            />
-            <div class="testimonial-content">
-              <div class="testimonial-name">
-                Tom Osman <span class="testimonial-handle">@tomosman</span>
-              </div>
-              <p>GMIND is the bomb btw.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    </section> -->
     <footer id="contact" class="footer">
       <div class="container">
         <div class="footer-content">
@@ -398,8 +344,20 @@
         </div>
       </div>
     </footer>
-
     <script>
+      // Scroll header functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const header = document.querySelector("header");
+
+        // Header scroll effect
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 100) {
+            header.classList.add("scrolled");
+          } else {
+            header.classList.remove("scrolled");
+          }
+        });
+      });
       // Mobile menu functionality
       const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
