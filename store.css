@@ -406,6 +406,9 @@ nav a:hover::after {
 .product-card__img {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
 }
 
 .product-card__img img {
