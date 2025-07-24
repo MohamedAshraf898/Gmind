@@ -32,8 +32,9 @@
           </ul>
         </nav>
         <div class="auth-links">
-          <a href="#" class="btn btn-icon">
+          <a href="cart.html" class="btn btn-icon cart-header-link">
             <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge" id="cart-badge">0</span>
           </a>
           <a href="#" class="btn btn-icon btn-primary">
             <i class="fas fa-user"></i>
@@ -387,6 +388,8 @@
       </div>
     </footer>
 
+    <div id="cart-toast" class="cart-toast">Item added to cart!</div>
+
     <script>
       // Image gallery functionality
       function changeImage(src, element) {
@@ -461,13 +464,48 @@
         }
       });
 
-      // Add to cart functionality
-      document
-        .querySelector(".btn-add-cart")
-        .addEventListener("click", function () {
-          const quantity = document.getElementById("quantity").value;
-          alert(`Added ${quantity} item(s) to cart!`);
+      function updateCartBadge() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const count = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        document.querySelectorAll("#cart-badge").forEach((badge) => {
+          badge.textContent = count > 0 ? count : "";
+          badge.style.display = count > 0 ? "inline-block" : "none";
         });
+      }
+
+      // Add to cart functionality
+      const addCartBtn = document.querySelector(".btn-add-cart");
+      if (addCartBtn) {
+        addCartBtn.addEventListener("click", function () {
+          const product = {
+            name: document.querySelector(".product-title").textContent,
+            price: document
+              .querySelector(".current-price")
+              .textContent.replace(/[^\d.]/g, ""),
+            image: document.querySelector(".main-image img").src,
+            desc: "Size: Large<br>Color: White",
+            quantity: parseInt(document.getElementById("quantity").value) || 1,
+          };
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+          // Use all properties to check uniqueness
+          const existing = cart.find(
+            (item) =>
+              item.name === product.name &&
+              item.desc === product.desc &&
+              item.image === product.image
+          );
+          if (existing) {
+            existing.quantity += product.quantity;
+          } else {
+            cart.push(product);
+          }
+          localStorage.setItem("cart", JSON.stringify(cart));
+          updateCartBadge();
+          showCartToast("Item added to cart!");
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", updateCartBadge);
 
       // Wishlist functionality
       document
@@ -484,6 +522,61 @@
             this.style.color = "";
           }
         });
+    </script>
+    <style>
+      .cart-toast {
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%) translateY(40px);
+        background: #443d96;
+        color: #fff;
+        padding: 16px 32px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 9999;
+        box-shadow: 0 4px 24px rgba(68, 61, 150, 0.13);
+        transition: opacity 0.4s, transform 0.4s;
+      }
+      .cart-toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+      }
+      .cart-badge {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        background: #e50b4e;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        font-weight: 700;
+        min-width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 6px;
+        z-index: 10;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+      }
+      .cart-header-link {
+        position: relative;
+      }
+    </style>
+    <script>
+      function showCartToast(msg) {
+        const toast = document.getElementById("cart-toast");
+        toast.textContent = msg || "Item added to cart!";
+        toast.classList.add("show");
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2000);
+      }
     </script>
   </body>
 </html>
