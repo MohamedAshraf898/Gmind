@@ -93,19 +93,19 @@ function initializeNavigation() {
             const href = this.getAttribute('href');
             // Only handle smooth scroll for in-page anchors
             if (href && href.startsWith('#')) {
-                e.preventDefault();
+            e.preventDefault();
                 const targetId = href.substring(1);
-                const targetSection = document.getElementById(targetId);
-
-                if (targetSection) {
-                    const headerHeight = header.offsetHeight;
-                    const targetPosition = targetSection.offsetTop - headerHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
             }
             // Otherwise, let the browser handle the navigation (for aboutus.html, etc.)
         });

@@ -12,7 +12,22 @@
   --text-light-gray: #888686;
   --border-color: #ececec;
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: #f3fafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #443d96;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3488;
+}
 html,
 body {
   overflow-x: hidden;

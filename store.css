@@ -3,6 +3,22 @@
 *::after {
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3fafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #443d96;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3488;
+}
 img,
 video {
   max-width: 100% !important;

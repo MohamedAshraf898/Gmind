@@ -6,7 +6,22 @@ body {
   padding: 0;
   margin: 0;
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
 
+::-webkit-scrollbar-track {
+  background: #f3fafa;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #443d96;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3488;
+}
 /* Desktop - No body padding */
 @media (min-width: 768px) {
   body {
