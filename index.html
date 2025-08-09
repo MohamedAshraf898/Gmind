@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <!-- Navigation Header -->
@@ -107,30 +108,56 @@
             Trusted by leading educational institutions
           </p>
         </div>
-        <div class="clients-logos">
-          <div class="client-logo">
-            <img
-              src="https://via.placeholder.com/208x61/CCCCCC/666666?text=School+Logo"
-              alt="Client 1"
-            />
-          </div>
-          <div class="client-logo">
-            <img
-              src="https://via.placeholder.com/208x61/CCCCCC/666666?text=University"
-              alt="Client 2"
-            />
-          </div>
-          <div class="client-logo">
-            <img
-              src="https://via.placeholder.com/208x61/CCCCCC/666666?text=Institute"
-              alt="Client 3"
-            />
-          </div>
-          <div class="client-logo">
-            <img
-              src="https://via.placeholder.com/208x61/CCCCCC/666666?text=Academy"
-              alt="Client 4"
-            />
+        <div class="swiper-container clients-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="client-logo">
+                <img
+                  src="Images/GMIND.png"
+                  alt="Client 1"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client-logo">
+                <img
+                src="Images/GMIND.png"
+                alt="Client 2"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client-logo">
+                <img
+                src="Images/GMIND.png"
+                alt="Client 3"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client-logo">
+                <img
+                src="Images/GMIND.png"
+                alt="Client 4"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client-logo">
+                <img
+                src="Images/GMIND.png"
+                alt="Client 5"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client-logo">
+                <img
+                src="Images/GMIND.png"
+                alt="Client 6"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -412,95 +439,156 @@
         <div class="games-header">
           <h2 class="section-title">Explore our Games</h2>
           <p class="section-subtitle">
-            Join the fun and learning – here's what's coming next!
+            Join the fun and learning – here's what's coming next! 
           </p>
         </div>
 
-        <div class="games-grid">
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Journey to Mars" />
+        <!-- First Row - Scrolls Left to Right -->
+        <div class="swiper-container games-swiper games-swiper-left" style="padding-bottom: 400px !important; padding-top: 5px !important;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Journey to Mars" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Journey To Mars</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-            <div class="game-content">
-              <h3 class="game-title">Journey To Mars</h3>
-              <button class="btn btn-install">Install</button>
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Ocean Explorer" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Ocean Explorer</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Ocean Explorer" />
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Math Adventure" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Math Adventure</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-            <div class="game-content">
-              <h3 class="game-title">Ocean Explorer</h3>
-              <button class="btn btn-install">Install</button>
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Science Lab" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Science Lab</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Math Adventure" />
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Space Explorer" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Space Explorer</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-            <div class="game-content">
-              <h3 class="game-title">Math Adventure</h3>
-              <button class="btn btn-install">Install</button>
-            </div>
-          </div>
-
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Science Lab" />
-            </div>
-            <div class="game-content">
-              <h3 class="game-title">Science Lab</h3>
-              <button class="btn btn-install">Install</button>
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Robot Builder" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Robot Builder</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="games-grid">
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Journey to Mars" />
-            </div>
-            <div class="game-content">
-              <h3 class="game-title">Journey To Mars</h3>
-              <button class="btn btn-install">Install</button>
-            </div>
-          </div>
 
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Ocean Explorer" />
+        <!-- Second Row - Scrolls Right to Left -->
+        <div class="swiper-container games-swiper games-swiper-right" style="padding-bottom: 100px !important;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Coding Master" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Coding Master</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-            <div class="game-content">
-              <h3 class="game-title">Ocean Explorer</h3>
-              <button class="btn btn-install">Install</button>
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Art Studio" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Art Studio</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Math Adventure" />
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Music Maker" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Music Maker</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-            <div class="game-content">
-              <h3 class="game-title">Math Adventure</h3>
-              <button class="btn btn-install">Install</button>
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Language Learner" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Language Learner</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-          </div>
-
-          <div class="game-card">
-            <div class="game-image">
-              <img src="Images/g1.jpg" alt="Science Lab" />
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="History Quest" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">History Quest</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
-            <div class="game-content">
-              <h3 class="game-title">Science Lab</h3>
-              <button class="btn btn-install">Install</button>
+            <div class="swiper-slide">
+              <div class="game-card">
+                <div class="game-image">
+                  <img src="Images/g1.jpg" alt="Nature Explorer" />
+                </div>
+                <div class="game-content">
+                  <h3 class="game-title">Nature Explorer</h3>
+                  <button class="btn btn-install">Install</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div class="games-cta">
-          <button class="btn btn-primary">View Games</button>
+          <button class="btn btn-primary" href="games.html">View Games</button>
         </div>
       </div>
     </section>
@@ -669,6 +757,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       const images = document.querySelectorAll("#productImageSlider img");
       const prevBtn = document.querySelector(".product-img-arrow-left");
@@ -749,6 +838,107 @@
       images.forEach((img, i) => {
         img.classList.toggle("active", i === current);
       });
+
+      // Initialize Clients Swiper
+      const clientsSwiper = new Swiper('.clients-swiper', {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+        speed: 3000,
+        allowTouchMove: false,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      // Initialize Games Swiper - First Row (Left to Right)
+      const gamesSwiperLeft = new Swiper('.games-swiper-left', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+        speed: 4000,
+        allowTouchMove: false,
+        direction: 'horizontal',
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      // Initialize Games Swiper - Second Row (Right to Left)
+      const gamesSwiperRight = new Swiper('.games-swiper-right', {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+        },
+        speed: 4000,
+        allowTouchMove: false,
+        direction: 'horizontal',
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      // Reverse the direction of the second swiper
+      gamesSwiperRight.autoplay.stop();
+      setInterval(() => {
+        gamesSwiperRight.slidePrev();
+      }, 4000);
     </script>
   </body>
 </html>

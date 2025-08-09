@@ -91,8 +91,9 @@ body {
   font-weight: 400;
   color: var(--text-gray);
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
+
 
 /* Buttons */
 .btn {
@@ -445,17 +446,37 @@ body {
   color: var(--secondary-color);
 }
 
-.clients-logos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Clients Swiper */
+.clients-swiper {
+  width: 100%;
+  height: 100px;
   opacity: 0.4;
+}
+
+.clients-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.client-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .client-logo img {
   max-width: 208px;
   height: 61px;
   object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.client-logo img:hover {
+  opacity: 1;
 }
 
 /* Services Section */
@@ -1729,11 +1750,19 @@ body {
   margin-bottom: 80px;
 }
 
-.games-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
-  gap: 34px;
-  margin-bottom: 60px;
+/* Games Swiper */
+.games-swiper {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 40px;
+}
+
+.games-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  padding: 0 15px;
 }
 
 .game-card {
@@ -1742,24 +1771,19 @@ body {
   align-items: center;
   text-align: center;
   transition: transform 0.3s ease;
-}
-
-.game-card:nth-child(even) {
-  transform: rotate(2deg);
-}
-
-.game-card:nth-child(odd) {
-  transform: rotate(-2deg);
+  width: 280px;
+  max-width: 280px;
+  background-color: transparent;
 }
 
 .game-card:hover {
-  transform: rotate(0deg) translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .game-image {
   width: 100%;
-  height: 374px;
-  background: #d9d9d9;
+  height: 280px;
+  background: transparent;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
   overflow: hidden;
@@ -2069,8 +2093,12 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .games-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .games-swiper {
+    height: 350px;
+  }
+
+  .games-swiper .swiper-slide {
+    height: 350px;
   }
 
   .testimonials-grid {
@@ -2109,8 +2137,12 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .games-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .games-swiper {
+    height: 350px;
+  }
+
+  .games-swiper .swiper-slide {
+    height: 350px;
   }
 
   .testimonials-grid {
@@ -2207,10 +2239,13 @@ body {
     gap: 30px;
   }
 
-  .games-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-bottom: 50px;
+  .games-swiper {
+    height: 350px;
+    margin-bottom: 40px;
+  }
+
+  .games-swiper .swiper-slide {
+    height: 350px;
   }
 
   .testimonials-grid {
@@ -2369,9 +2404,12 @@ body {
     gap: 25px;
   }
 
-  .games-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+  .games-swiper {
+    height: 350px;
+  }
+
+  .games-swiper .swiper-slide {
+    height: 350px;
   }
 
   .testimonials-grid {
@@ -2586,10 +2624,12 @@ body {
     padding: 60px 0;
   }
 
-  .clients-logos {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+  .clients-swiper {
+    height: 80px;
+  }
+
+  .clients-swiper .swiper-slide {
+    height: 80px;
   }
 
   .client-logo img {
@@ -2716,10 +2756,13 @@ body {
     padding: 60px 0;
   }
 
-  .games-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-bottom: 40px;
+  .games-swiper {
+    height: 300px;
+    margin-bottom: 30px;
+  }
+
+  .games-swiper .swiper-slide {
+    height: 300px;
   }
 
   .game-card {
@@ -2968,10 +3011,12 @@ body {
     padding: 50px 0;
   }
 
-  .clients-logos {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  .clients-swiper {
+    height: 60px;
+  }
+
+  .clients-swiper .swiper-slide {
+    height: 60px;
   }
 
   .client-logo img {
@@ -3440,10 +3485,12 @@ body {
     padding: 40px 0;
   }
 
-  .clients-logos {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
+  .clients-swiper {
+    height: 50px;
+  }
+
+  .clients-swiper .swiper-slide {
+    height: 50px;
   }
 
   .client-logo img {
@@ -3627,10 +3674,13 @@ body {
     padding: 50px 0;
   }
 
-  .games-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin-bottom: 25px;
+  .games-swiper {
+    height: 200px;
+    margin-bottom: 15px;
+  }
+
+  .games-swiper .swiper-slide {
+    height: 200px;
   }
 
   .game-card {
